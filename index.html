@@ -41,9 +41,6 @@
           <p class="title">Software Engineer | Problem Solver</p>
         </div>
 
-        <button class="theme-btn" data-theme-btn title="Toggle Theme">
-          <ion-icon name="moon-outline"></ion-icon>
-        </button>
 
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
@@ -131,11 +128,16 @@
     <nav class="navbar">
       <ul class="navbar-list">
         <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
-        <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
-        <li class="navbar-item"><button class="navbar-link" data-nav-link>Portfolio</button></li>
-        <li class="navbar-item"><button class="navbar-link" data-nav-link>Blog</button></li>
+        <li class="navbar-item"><button class="navbar-link" data-nav-link>Experience</button></li>
+        <li class="navbar-item"><button class="navbar-link" data-nav-link>Project</button></li>
+        <li class="navbar-item"><button class="navbar-link" data-nav-link>Skills</button></li>
+        <li class="navbar-item"><button class="navbar-link" data-nav-link>Career</button></li>
+        <li class="navbar-item"><button class="navbar-link" data-nav-link>Certificate</button></li>
         <li class="navbar-item"><button class="navbar-link" data-nav-link>Contact</button></li>
       </ul>
+      <button class="theme-btn" data-theme-btn title="Toggle Theme">
+        <ion-icon name="moon-outline"></ion-icon>
+      </button>
     </nav>
 
     <!--
@@ -147,7 +149,7 @@
       <!--
           - #ABOUT
         -->
-      <article class="about active" data-page="about">
+      <article id="about" class="about active" data-page="about">
 
         <header>
           <h2 class="h2 article-title">About me</h2>
@@ -176,43 +178,131 @@
         </section>
 
 
-        <!--
-            - Work Experience Section (NEW)
-          -->
-        <section class="experience-section">
-          <h3 class="h3 section-title">Work Experience</h3>
+      </article>
 
-          <div class="experience-card">
-            <div class="experience-header">
-              <div>
-                <h4 class="experience-title">Software Engineer Trainee</h4>
-                <p class="experience-company">Brain Station 23</p>
-              </div>
-              <div class="experience-date">Aug 2024 - Present</div>
+
+      <!--
+          - #EXPERIENCE
+        -->
+      <article id="experience" class="experience" data-page="experience">
+
+        <header>
+          <h2 class="h2 article-title">Experience</h2>
+        </header>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
             </div>
-            <p class="experience-location">Mohakhali, Dhaka, Bangladesh • On-site</p>
-            <ul class="experience-highlights">
-              <li>Working on <strong>ASP.NET Core MVC</strong> projects using <strong>Clean Architecture</strong> and
-                <strong>Onion Architecture</strong>
-              </li>
-              <li>Designing scalable and maintainable solutions with layered architecture</li>
-              <li>Applying <strong>Domain-Driven Design (DDD)</strong> and <strong>SOLID</strong> principles</li>
-              <li>Writing clean, testable code with high unit test coverage</li>
-              <li>Collaborating in Agile teams and participating in sprint planning and code reviews</li>
-              <li>Using Git and GitLab for version control and CI/CD workflows</li>
-            </ul>
-            <div class="experience-skills">
-              <span class="skill-tag">C#</span>
-              <span class="skill-tag">ASP.NET Core MVC</span>
-              <span class="skill-tag">Clean Architecture</span>
-              <span class="skill-tag">DDD</span>
-              <span class="skill-tag">SOLID</span>
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">CI/CD</span>
-            </div>
+            <h3 class="h3">Work Experience</h3>
           </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Software Engineer Trainee</h4>
+              <span>Brain Station 23</span>
+              <span>Aug 2024 — Present</span>
+              <p class="timeline-text">
+                Working on ASP.NET Core MVC projects using Clean Architecture and Onion Architecture. Designing scalable
+                and maintainable solutions with layered architecture. Applying Domain-Driven Design (DDD) and SOLID
+                principles. Writing clean, testable code with high unit test coverage. Collaborating in Agile teams and
+                participating in sprint planning and code reviews. Using Git and GitLab for version control and CI/CD
+                workflows.
+              </p>
+              <div class="experience-skills" style="margin-top: 15px;">
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">ASP.NET Core MVC</span>
+                <span class="skill-tag">Clean Architecture</span>
+                <span class="skill-tag">DDD</span>
+                <span class="skill-tag">SOLID</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">CI/CD</span>
+              </div>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Executive Committee Member</h4>
+              <span>BUBT IT Club</span>
+              <span>Dec 2022 - Aug 2023</span>
+              <p class="timeline-text">
+                Organized major events like ICPC Asia-West Continent 2021 and BUBT Intra-University Programming
+                Contests. Facilitated recruitment and promoted a collaborative club culture.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">President</h4>
+              <span>Shanti Songho</span>
+              <span>2018 — 2020</span>
+              <p class="timeline-text">
+                Led community initiatives including blood donation drives, road renovations, and relief distribution.
+                Demonstrated strong leadership in community service.
+              </p>
+            </li>
+          </ol>
         </section>
 
+      </article>
+
+
+      <!--
+          - #PROJECT
+        -->
+      <article id="project" class="project" data-page="project">
+
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+          </ul>
+
+
+          <ul class="project-list">
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                </figure>
+                <h3 class="project-title">Finance App</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+            <!-- Add more project items here as needed using the same structure -->
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+      <!--
+          - #SKILLS
+        -->
+      <article id="skills" class="skills" data-page="skills">
+
+        <header>
+          <h2 class="h2 article-title">Skills</h2>
+        </header>
 
         <!--
             - Problem Solving Stats
@@ -282,7 +372,7 @@
 
 
         <!--
-            - Skills
+            - Technical Skills
           -->
         <section class="service">
           <h3 class="h3 service-title">Technical Skills</h3>
@@ -341,56 +431,13 @@
 
 
       <!--
-          - #RESUME
+          - #CAREER
         -->
-      <article class="resume" data-page="resume">
+      <article id="career" class="career" data-page="career">
 
         <header>
-          <h2 class="h2 article-title">Resume</h2>
+          <h2 class="h2 article-title">Career</h2>
         </header>
-
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="briefcase-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Work Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Software Engineer Trainee</h4>
-              <span>Brain Station 23</span>
-              <span>Aug 2024 — Present</span>
-              <p class="timeline-text">
-                Working on ASP.NET Core MVC projects using Clean Architecture and Onion Architecture. Designing scalable
-                and maintainable solutions with layered architecture. Applying Domain-Driven Design (DDD) and SOLID
-                principles.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Executive Committee Member</h4>
-              <span>BUBT IT Club</span>
-              <span>Dec 2022 - Aug 2023</span>
-              <p class="timeline-text">
-                Organized major events like ICPC Asia-West Continent 2021 and BUBT Intra-University Programming
-                Contests. Facilitated recruitment and promoted a collaborative club culture.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">President</h4>
-              <span>Shanti Songho</span>
-              <span>2018 — 2020</span>
-              <p class="timeline-text">
-                Led community initiatives including blood donation drives, road renovations, and relief distribution.
-                Demonstrated strong leadership in community service.
-              </p>
-            </li>
-          </ol>
-        </section>
-
 
         <section class="timeline">
           <div class="title-wrapper">
@@ -463,95 +510,39 @@
 
 
       <!--
-          - #PORTFOLIO
+          - #CERTIFICATE
         -->
-      <article class="portfolio" data-page="portfolio">
+      <article id="certificate" class="certificate" data-page="certificate">
 
         <header>
-          <h2 class="h2 article-title">Portfolio</h2>
+          <h2 class="h2 article-title">Certificates</h2>
         </header>
 
-        <section class="projects">
+        <section class="certificate-section">
+          <p style="color: var(--on-background-variant); font-size: var(--fs-6);">
+            Certificates and achievements will be displayed here. Coming soon...
+          </p>
 
-          <ul class="filter-list">
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-          </ul>
-
-          <div class="filter-select-box">
-            <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value>Select category</div>
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-            </button>
-            <ul class="select-list">
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-            </ul>
+          <!-- Certificate items can be added here -->
+          <div class="certificate-list"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
+            <!-- Example Certificate Card Structure (uncomment and use when adding certificates)
+            <div class="certificate-card" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px; padding: 25px; transition: var(--transition-normal);">
+              <h4 style="color: var(--on-background); font-size: var(--fs-5); margin-bottom: 10px;">Certificate Name</h4>
+              <p style="color: var(--primary); font-weight: 600; font-size: var(--fs-7); margin-bottom: 8px;">Issuing Organization</p>
+              <p style="color: var(--on-background-variant); font-size: var(--fs-8);">Issue Date</p>
+            </div>
+            -->
           </div>
-
-          <ul class="project-list">
-            <!-- Placeholder for projects - to be populated dynamically or manually -->
-            <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">Finance App</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
-            <!-- Add more project items here as needed using the same structure -->
-
-          </ul>
-
         </section>
 
-      </article>
-
-
-      <!--
-          - #BLOG
-        -->
-      <article class="blog" data-page="blog">
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-        <section class="blog-posts">
-          <p style="color: var(--on-background-variant);">Coming soon...</p>
-          <ul class="blog-posts-list"></ul>
-        </section>
       </article>
 
 
       <!--
           - #CONTACT
         -->
-      <article class="contact" data-page="contact">
+      <article id="contact" class="contact" data-page="contact">
 
         <header>
           <h2 class="h2 article-title">Contact</h2>

@@ -120,25 +120,52 @@ for (let i = 0; i < formInputs.length; i++) {
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
+const sections = document.querySelectorAll("article[data-page]");
 
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
+// Smooth scroll to section on nav link click
+navigationLinks.forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.innerHTML.toLowerCase();
+    const targetSection = document.getElementById(targetId);
+    
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+      
+      // Update active nav link
+      navigationLinks.forEach(navLink => navLink.classList.remove("active"));
+      this.classList.add("active");
     }
-
   });
-}
+});
+
+// Intersection Observer for scroll-based nav highlighting
+const navObserverOptions = {
+  root: null,
+  rootMargin: "-100px 0px -50% 0px",
+  threshold: 0
+};
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const sectionId = entry.target.id;
+      
+      // Update active nav link
+      navigationLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.innerHTML.toLowerCase() === sectionId) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+}, navObserverOptions);
+
+// Observe all sections
+sections.forEach(section => {
+  navObserver.observe(section);
+});
 
 // Theme Toggle Variables
 const themeBtn = document.querySelector("[data-theme-btn]");
