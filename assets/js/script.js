@@ -222,3 +222,42 @@ const observer = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('section').forEach(section => {
   observer.observe(section);
 });
+
+// Achievement Slider
+const sliderContainer = document.querySelector("[data-slider-container]");
+const sliderPrevBtn = document.querySelector("[data-slider-prev]");
+const sliderNextBtn = document.querySelector("[data-slider-next]");
+
+if (sliderContainer && sliderPrevBtn && sliderNextBtn) {
+  // Slide Next Function
+  const slideNext = function () {
+    const maxScrollLeft = sliderContainer.scrollWidth - sliderContainer.clientWidth;
+
+    if (sliderContainer.scrollLeft >= maxScrollLeft - 10) {
+      // Reset to start
+      sliderContainer.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      sliderContainer.scrollBy({ left: sliderContainer.clientWidth, behavior: "smooth" });
+    }
+  }
+
+  // Slide Prev Function
+  const slidePrev = function () {
+    sliderContainer.scrollBy({ left: -sliderContainer.clientWidth, behavior: "smooth" });
+  }
+
+  sliderNextBtn.addEventListener("click", slideNext);
+  sliderPrevBtn.addEventListener("click", slidePrev);
+
+  // Auto Play
+  let autoPlayInterval = setInterval(slideNext, 3000);
+
+  // Pause on hover
+  sliderContainer.addEventListener("mouseover", function () {
+    clearInterval(autoPlayInterval);
+  });
+
+  sliderContainer.addEventListener("mouseout", function () {
+    autoPlayInterval = setInterval(slideNext, 3000);
+  });
+}
