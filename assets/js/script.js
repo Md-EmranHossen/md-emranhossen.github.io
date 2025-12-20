@@ -92,7 +92,7 @@ let lastClickedBtn = filterBtn[0];
 for (let i = 0; i < filterBtn.length; i++) {
   filterBtn[i].addEventListener("click", function () {
     let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
+    if (selectValue) selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
 
     if (lastClickedBtn) lastClickedBtn.classList.remove("active");
@@ -128,10 +128,10 @@ navigationLinks.forEach(link => {
     e.preventDefault();
     const targetId = this.innerHTML.toLowerCase();
     const targetSection = document.getElementById(targetId);
-    
+
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: "smooth" });
-      
+
       // Update active nav link
       navigationLinks.forEach(navLink => navLink.classList.remove("active"));
       this.classList.add("active");
@@ -150,7 +150,7 @@ const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const sectionId = entry.target.id;
-      
+
       // Update active nav link
       navigationLinks.forEach(link => {
         link.classList.remove("active");
