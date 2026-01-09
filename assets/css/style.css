@@ -1119,27 +1119,46 @@ main {
 }
 
 ul.timeline-text {
-  padding-left: 20px;
+  padding-left: 25px;
   margin-top: 12px;
+  margin-left: 0;
 }
 
 ul.timeline-text li {
   position: relative;
-  padding-left: 8px;
-  margin-bottom: 8px;
+  padding-left: 10px;
+  margin-bottom: 10px;
   list-style: none;
+  line-height: 1.7;
 }
 
 ul.timeline-text li::before {
   content: "▹";
   position: absolute;
-  left: -18px;
+  left: -20px;
   color: var(--primary);
   font-weight: bold;
+  font-size: 1rem;
 }
 
 ul.timeline-text li strong {
   color: var(--on-background);
+}
+
+@media (max-width: 480px) {
+  ul.timeline-text {
+    padding-left: 22px;
+  }
+
+  ul.timeline-text li {
+    padding-left: 8px;
+    font-size: var(--fs-7);
+  }
+
+  ul.timeline-text li::before {
+    left: -18px;
+    font-size: 0.9rem;
+  }
 }
 
 /*-----------------------------------*\
