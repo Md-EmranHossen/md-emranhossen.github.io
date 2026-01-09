@@ -1118,6 +1118,30 @@ main {
   font-size: var(--fs-6);
 }
 
+ul.timeline-text {
+  padding-left: 20px;
+  margin-top: 12px;
+}
+
+ul.timeline-text li {
+  position: relative;
+  padding-left: 8px;
+  margin-bottom: 8px;
+  list-style: none;
+}
+
+ul.timeline-text li::before {
+  content: "▹";
+  position: absolute;
+  left: -18px;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+ul.timeline-text li strong {
+  color: var(--on-background);
+}
+
 /*-----------------------------------*\
   #SKILLS
 \*-----------------------------------*/
