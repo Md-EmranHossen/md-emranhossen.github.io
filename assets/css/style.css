@@ -541,12 +541,12 @@ main {
   border-top: 1px solid var(--glass-border);
   border-radius: 24px 24px 0 0;
   z-index: 100;
-  padding: 12px 20px;
+  padding: 10px 15px;
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.3);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
+  gap: 10px;
 }
 
 /* Light mode navbar */
@@ -585,16 +585,12 @@ main {
 
 /* Theme button in navbar */
 .navbar .theme-btn {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
   background: var(--surface);
   color: var(--primary);
   border: 1px solid var(--glass-border);
-  padding: 10px;
-  border-radius: 12px;
-  font-size: 20px;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 18px;
   transition: var(--transition-fast);
   box-shadow: var(--shadow-sm);
   flex-shrink: 0;
@@ -602,37 +598,67 @@ main {
 
 @media (min-width: 1024px) {
   .navbar .theme-btn {
+    position: absolute;
     right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    font-size: 20px;
   }
 }
 
 .navbar .theme-btn:hover {
   background: var(--surface-hover);
-  transform: translateY(-50%) rotate(15deg);
   box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 1024px) {
+  .navbar .theme-btn:hover {
+    transform: translateY(-50%) rotate(15deg);
+  }
 }
 
 .navbar-list {
   display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 5px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.navbar-list::-webkit-scrollbar {
+  display: none;
 }
 
 @media (min-width: 1024px) {
   .navbar-list {
+    justify-content: center;
     gap: 35px;
     padding: 18px 0;
+    overflow-x: visible;
   }
 }
 
 .navbar-link {
   color: var(--on-background-variant);
-  font-size: var(--fs-6);
+  font-size: var(--fs-7);
   font-weight: var(--fw-600);
-  padding: 12px;
+  padding: 8px 10px;
   transition: var(--transition-fast);
   position: relative;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .navbar-link {
+    font-size: var(--fs-6);
+    padding: 12px;
+  }
 }
 
 .navbar-link::after {
@@ -1742,7 +1768,8 @@ textarea.form-input {
 /* Ensure navbar doesn't overlap content on mobile */
 @media (max-width: 1023px) {
   .navbar {
-    padding: 8px 10px;
+    padding: 8px 12px;
+    gap: 8px;
   }
 
   .navbar .theme-btn {
@@ -1750,19 +1777,28 @@ textarea.form-input {
     right: auto;
     top: auto;
     transform: none;
-    margin-left: auto;
+    padding: 8px;
+    font-size: 18px;
   }
 
   .navbar-list {
-    flex-wrap: nowrap;
+    flex: 1;
+    justify-content: flex-start;
+    gap: 3px;
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding-right: 50px;
+    padding: 3px 0;
+    margin: 0;
   }
 
   .navbar-list::-webkit-scrollbar {
     display: none;
+  }
+
+  .navbar-link {
+    font-size: 0.75rem;
+    padding: 6px 8px;
   }
 }
 
